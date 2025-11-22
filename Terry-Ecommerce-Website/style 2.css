@@ -1,0 +1,348 @@
+* {
+  padding: 0%;
+  font-family: sans-serif;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  background-color: white;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5.5em;
+}
+.nav {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: white;
+  width: 80%;
+  height: 5rem;
+}
+.navlinks {
+  font-family: sans-serif;
+  align-items: center;
+  display: flex;
+  height: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pages {
+  width: fit-content;
+  display: flex;
+  height: 2rem;
+}
+.pages ul {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 3vw, 2.2rem);
+}
+.pages ul a li {
+  display: flex;
+  list-style: none;
+  transition: 0.3s ease-in-out;
+  color: #1b1b1b;
+}
+.pages ul a li:hover,img:hover {
+    color: #F0A5A9;
+}
+ 
+.pages ul a {
+  text-decoration: none;
+}
+.pages ul a li div {
+  width: 15px;
+  height: 15px;
+}
+.pages ul a li img {
+  width: 10px;
+  margin-left: 2px;
+  margin-top: 5px;
+  height: 10px;
+}
+.Currecy {
+  padding-left: 2rem;
+}
+.Currecy img {
+  width: 10px;
+  margin-left: 2px;
+  margin-top: 5px;
+  height: 10px;
+}
+.more-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 2rem;
+  gap: 12px;
+}
+.more-icon{
+    display: none;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 2rem;
+  gap: 12px;
+}
+.Currecy,
+.Setting {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
+.Cart {
+  margin-top: -10px;
+  cursor: pointer;
+  width: 35px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.Count p {
+  color: white;
+}
+
+.Count {
+    cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f1a5aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+}
+.Open{
+    display: none;
+}
+.resposive-navbar{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15rem;
+}
+.Navbar{
+    display: none;
+    width: 84%;
+    flex-direction: column;
+    gap: 1px;
+    height: 100%;
+    background-color: #DDDDDD;
+}
+.Navbarlinks{
+    padding-left: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    font-size: 0.7rem;
+    justify-content: space-between;
+    padding: 15px 15px 15px 30px;
+    width: 100%;
+    display: none;
+    align-items: center;
+    height: 20%;
+    background-color: #F8F8F8;
+}
+.fa-solid{
+    display: none;
+    cursor: pointer;
+}
+.Navbarlinks:hover{
+    color: #f1a5aa;
+}
+.Navbarlinks p{
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.Heading{
+    z-index: 1000;
+    width: 40%;
+    height: 10rem;
+}
+ /* Home menu */
+.Home-Menu{
+    display: none; /*here you ca appear the menu*/
+    margin-left: 25rem;
+    width: 190px;
+    padding: 25px;
+    height: auto;
+}
+.Home-Menu ul{
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    list-style: none;
+}
+.Home-Menu ul li ,
+.Shop-Menu ul li,
+.Product-menu ul li,
+.Blog-Menu ul li {
+    position: relative;
+    padding-left: 20px; 
+    transition: color 0.4s ease, margin-left 0.4s ease;
+}
+
+.Home-Menu ul li::before,
+.Shop-Menu ul li::before,
+.Product-menu ul li::before, 
+.Blog-Menu ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 5px;
+    background-color: #F0A5A9;
+    transition: width 0.4s ease;
+}
+.Home-Menu ul li:hover,
+.Shop-Menu ul li:hover,
+.Product-menu ul li:hover,
+.Blog-Menu ul li:hover {
+    color: #F0A5A9;
+    margin-left: 8px;
+}
+.Home-Menu ul li:hover::before,
+.Shop-Menu ul li:hover::before,
+.Product-menu ul li:hover::before,
+.Blog-Menu ul li:hover::before {
+    width: 5px; 
+}
+ /* Shop menu */
+.Shop-Menu{
+    display: none;  /*here you ca appear the menu*/
+    padding: 10px;
+    margin-left: 27rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 60%;
+    height: 12rem;
+}
+.Shop{
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 90%;
+}
+.Shop P{
+    margin-left: 1rem;
+    font-family: auto;
+}
+.bed ul,.night-stand ul,.Acessories ul,.furnture ul{
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+/* product Menu */
+.Product-menu{
+    display: none; /* from here you canappear the menu */
+    width: 230px;
+    padding: 15px;
+    margin-left: 37rem;
+    height: auto;
+}
+.Product-menu ul{
+    font-size: 0.9rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+}
+.Blog-Menu ul{
+    font: 0.8rem;
+}
+/* blog menu */
+.Blog-Menu{
+    display: none;/*  here you ca appear the menu */
+    margin-left: 45rem;
+    width: 200px;
+    padding: 20px;
+}
+.Blog-Menu ul{
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Home-Menu ul a,
+.Product-menu ul a,
+.Blog-Menu ul a{
+    text-decoration: none;
+    color: black;
+}
+.Currecy-con{
+    width: 170px;
+    display: none;
+    position: absolute;
+    height: auto;
+    margin-left: 70rem;
+    cursor: pointer;
+    padding: 10px;
+    background-color: yellow;
+}
+.Currecy-con ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    font-size: 0.8rem;
+}
+.Currecy-con ul li:hover{
+    color: #F0A5A9;
+    transition: 0.2s ease-in-out;
+}
+@media (max-width: 1100px) {
+    .pages{
+        display: none;
+    }
+    .Open{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        margin-left: 15px;
+    }
+    .close{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        margin-left: 15px;
+    }
+    .more-icon{
+        display: block;
+    }
+}

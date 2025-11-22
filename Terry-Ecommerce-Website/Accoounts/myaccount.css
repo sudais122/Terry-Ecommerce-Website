@@ -1,0 +1,769 @@
+* {
+  padding: 0%;
+  font-family: sans-serif;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  background-color: white;
+}
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5.5em;
+}
+.nav {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  background-color: white;
+  width: 80%;
+  height: 5rem;
+}
+.navlinks {
+  font-family: sans-serif;
+  align-items: center;
+  display: flex;
+  height: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pages {
+  width: fit-content;
+  display: flex;
+  height: 2rem;
+}
+.pages ul {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 3vw, 2.2rem);
+}
+.pages ul a li {
+  display: flex;
+  list-style: none;
+  transition: 0.3s ease-in-out;
+  color: #1b1b1b;
+}
+.pages ul a li:hover,img:hover {
+    color: #F0A5A9;
+}
+ 
+.pages ul a {
+  text-decoration: none;
+}
+.pages ul a li div {
+  width: 15px;
+  height: 15px;
+}
+.pages ul a li img {
+  width: 10px;
+  margin-left: 2px;
+  margin-top: 5px;
+  height: 10px;
+}
+.Currecy {
+  padding-left: 2rem;
+}
+.Currecy img {
+  width: 10px;
+  margin-left: 2px;
+  margin-top: 5px;
+  height: 10px;
+}
+.more-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 2rem;
+  gap: 12px;
+}
+.more-icon{
+    display: none;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 2rem;
+  gap: 12px;
+}
+.Currecy,
+.Setting {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 100%;
+}
+.Cart {
+  margin-top: -10px;
+  cursor: pointer;
+  width: 35px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+.Count p {
+  color: white;
+}
+
+.Count {
+    cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #f1a5aa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: black;
+}
+.Open{
+    display: none;
+}
+.resposive-navbar{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15rem;
+}
+.Navbar{
+    display: none;
+    width: 84%;
+    flex-direction: column;
+    gap: 1px;
+    height: 100%;
+    background-color: #DDDDDD;
+}
+.Navbarlinks{
+    padding-left: 10px;
+    cursor: pointer;
+    transition: 0.2s ease-in;
+    font-size: 0.7rem;
+    justify-content: space-between;
+    padding: 15px 15px 15px 30px;
+    width: 100%;
+    display: none;
+    align-items: center;
+    height: 20%;
+    background-color: #F8F8F8;
+}
+.fa-solid{
+    display: none;
+    cursor: pointer;
+}
+.Navbarlinks:hover{
+    color: #f1a5aa;
+}
+.Navbarlinks p{
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+.Heading{
+    z-index: 1000;
+    width: 40%;
+    height: 10rem;
+}
+ /* Home menu */
+.Home-Menu{
+    position: absolute;
+    margin-top: 1px;
+    background-color: white;
+    display: none; 
+    margin-left: 25rem;
+    width: 190px;
+    padding: 25px;
+    height: auto;
+}
+.Home-Menu ul{
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 15px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    list-style: none;
+}
+.Home-Menu ul li ,
+.Shop-Menu ul li,
+.Product-menu ul li,
+.Blog-Menu ul li {
+    position: relative;
+    padding-left: 20px; 
+    transition: color 0.4s ease, margin-left 0.4s ease;
+}
+
+.Home-Menu ul li::before,
+.Shop-Menu ul li::before,
+.Product-menu ul li::before, 
+.Blog-Menu ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 5px;
+    background-color: #F0A5A9;
+    transition: width 0.4s ease;
+}
+.Home-Menu ul li:hover,
+.Shop-Menu ul li:hover,
+.Product-menu ul li:hover,
+.Blog-Menu ul li:hover {
+    color: #F0A5A9;
+    margin-left: 8px;
+}
+.Home-Menu ul li:hover::before,
+.Shop-Menu ul li:hover::before,
+.Product-menu ul li:hover::before,
+.Blog-Menu ul li:hover::before {
+    width: 5px; 
+}
+ /* Shop menu */
+.Shop-Menu{
+    display: none;  /*here you ca appear the menu*/
+    padding: 10px;
+    margin-left: 27rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 60%;
+    height: 12rem;
+}
+.Shop{
+    position: absolute;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    height: 90%;
+}
+.Shop P{
+    margin-left: 1rem;
+    font-family: auto;
+}
+.bed ul,.night-stand ul,.Acessories ul,.furnture ul{
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+/* product Menu */
+.Product-menu{
+    margin-top: 1px;
+    position: absolute;
+    background-color: white;
+    display: none; /* from here you canappear the menu */
+    width: 230px;
+    padding: 15px;
+    margin-left: 37rem;
+    height: auto;
+}
+.Product-menu ul{
+    font-size: 0.9rem;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    cursor: pointer;
+}
+.Blog-Menu ul{
+    font: 0.8rem;
+}
+/* blog menu */
+.Blog-Menu{
+    margin-top: 1px;
+    position: absolute;
+    background-color: white;
+    display: none;/*  here you ca appear the menu */
+    margin-left: 45rem;
+    width: 200px;
+    padding: 20px;
+}
+.Blog-Menu ul{
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Home-Menu ul a,
+.Product-menu ul a,
+.Blog-Menu ul a{
+    text-decoration: none;
+    color: black;
+}
+.Setting-Menu{
+    width: 150px;
+    position: absolute;
+    z-index: 999;
+    margin-left: 69rem;
+    height: auto;
+    background-color: white;
+    padding: 15px;
+}
+.Setting-Menu ul{
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    gap: 8px;
+    list-style: none;
+}
+.Setting-Menu ul a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: black;
+}
+.Setting-Menu ul a li:hover{
+    color: #F0A5A9;
+    transition: 0.2s ease-in-out;
+}
+.Currecy-con{
+    width: 170px;
+    display: none;
+    background-color: white;
+    position: absolute;
+    height: auto;
+    margin-left: 70rem;
+    cursor: pointer;
+    padding: 10px;
+}
+.Currecy-con ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    font-size: 0.8rem;
+}
+.Currecy-con ul li:hover{
+    color: #F0A5A9;
+    transition: 0.2s ease-in-out;
+}
+/* main section */
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25vh;
+    background-position: center;
+    background-size: cover;
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url('https://furnify-demo.myshopify.com/cdn/shop/files/slider_01.png?v=1564897701');
+}
+.Account-text{
+    flex-direction: column;
+    color: white;
+    z-index: 9999;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: auto;         
+    width: auto;           
+    padding: 20px;         
+    text-align: center;    
+}
+
+.Account-text .Account-main h1{
+    font-family: auto;
+    font-size: clamp(1.5rem, 4vw, 2.5rem); 
+}
+
+.Account{
+    display: flex;
+    gap: 10px;
+    font-size: clamp(0.8rem, 2vw, 1rem); 
+}
+
+.Account a{
+    color: white;
+}
+
+.Account a:hover{
+    color: #F0A5A9;
+    transition: 0.3s ease-out;
+}
+/* fomr styling */
+.Form{
+    display: flex;
+    flex-direction: column;   /* important fix */
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: auto;
+}
+
+.Form form{
+    width: 40%;
+    padding-bottom: 2rem;
+    height: auto;
+    background-color: #F9F9F9;
+    margin: auto;
+    margin-top: 5rem;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+/* Responsive fix */
+@media (max-width: 992px){
+    .Form form{
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px){
+    .Form form{
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px){
+    .Form form{
+        width: 92%;
+        margin-top: 3rem;
+    }
+}
+
+/* Header */
+form header{
+    height: auto;
+    width: 100%;
+    padding: 2.5rem 10px 10px 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+form header p{
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    color: gray;
+    margin-top: 10px;
+}
+header h3{
+    color: black;
+    font-weight: 500;
+}
+
+/* Inputs */
+.inputs{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0px 40px;
+    margin-top: 20px;
+}
+
+.inputs input{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid #EBEBEB;
+    outline: none;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+/* Submit section */
+.Submit{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem 10px 3rem;
+}
+
+.Submit button{
+    font-size: 0.6rem;
+    padding: 1rem;
+    width: 100px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease-in-out;
+    border: none;
+    background-color: #F1A5AA;
+    color: white;
+}
+
+.Submit button:hover{
+    background-color: black;
+}
+
+.Submit a{
+    text-decoration: none;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    color: black;
+    transition: color 0.2s ease-in-out;
+}
+
+.Submit a:hover{
+    color: #F0A5A9;
+}
+
+form > a{
+    text-decoration: none;
+    padding: 1rem 1rem 1rem 3rem;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    color: black;
+    display: flex;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s ease-in-out;
+}
+/* erro mesage on form */
+#Error-Message{
+    border-radius: 5px;
+    width: 35rem;
+    padding: 0.7rem;
+    background-color: #FFF7F6;
+    border: 1px solid #D02E2F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem; /* space before form */
+}
+#Error{
+    padding: 0.7rem;
+    color: #D02E2F;
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 0.8rem;
+}
+
+form > a:hover{
+    color: #F0A5A9;
+}
+/* responsive */
+@media (max-width: 768px){
+    #Error-Message{
+        width: 90%;
+        margin: 2rem auto 0 auto;
+    }
+}
+@media (max-width: 480px){
+    #Error-Message{
+        width: 95%;
+        padding: 0.8rem;
+    }
+    .inputs{
+        padding: 0px 20px;
+    }
+    form > a{
+        padding-left: 20px;
+    }
+        #Error{
+        font-size: 0.75rem;
+        padding: 0.5rem;
+    }
+    .Submit{
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 20px;
+    }
+}
+@media (max-width: 600px){
+    main{
+        height: 35vh;   
+    }
+
+    .Account{
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+}
+@media (max-width: 1100px) {
+    .pages{
+        display: none;
+    }
+    .Open{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        margin-left: 15px;
+    }
+    .close{
+        display: none;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        border: 1px solid black;
+        margin-left: 15px;
+    }
+    .more-icon{
+        display: block;
+    }
+}
+
+/* footer styling */
+.footer {
+    margin-top: 5rem;
+    width: 100%;
+    background-color: #F7F7F7;
+    padding: 6rem 6rem;
+}
+
+.footer-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+.footer-box h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.footer-box p,
+.footer-box li {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    list-style: none;
+}
+
+.footer-box ul li:hover {
+    color: #ECA3A9;
+    cursor: pointer;
+}
+
+/* Newsletter Input + Button */
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.newsletter input {
+    border: none;
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    padding: 0.9rem;
+    width: 100%;
+    background-color: #ECA3A9;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+
+.newsletter button:hover {
+    background-color: black;
+}
+.empty-cart{
+    width: 20%;
+    height: 5rem;
+}
+#Shoppingcart{
+    width: 100%;
+    height: 20rem;
+}
+.empty-cart{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    width: 40%;
+    text-align: center;
+    height: auto;
+}
+.empty-cart h3{
+    font-size: clamp(2.2rem, 3vw, 1.5rem);
+    font-weight: 500;
+}
+.empty-cart h4{
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-weight: 400;
+}
+.empty-cart button{
+    padding: 0.8rem;
+    width: 140px;
+    cursor: pointer;
+    border: none;
+    background-color: #F1A5AA;
+    color: white;
+    transition: background-color 0.3s ease-in-out;
+}
+.empty-cart button:hover{
+    background-color: black;
+}
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.Form .wishlist{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    font-weight: 500;
+    width: 100%;
+    height: auto;
+    padding: 5rem 1rem 0rem 10rem;
+}
+.wishlist h4{
+     font-size: 3rem;
+     font-weight: 400;
+     color: #242424;
+}
+.wishlist p a{
+    color: #242424;
+    transition: 0.3s color ease-in-out;
+}
+.wishlist p a:hover{
+    color: #F0A5A9;
+}
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .newsletter input,
+    .newsletter button {
+        width: 100%;
+    }
+}
