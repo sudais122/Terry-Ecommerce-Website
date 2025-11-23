@@ -1,5 +1,4 @@
-const NavBarMAIN = document.querySelector('.resposive-navbar');
-const Navbar = document.querySelector('.Navbar');
+
 const Navbarlinks = document.querySelectorAll('.Navbarlinks');
 
 const Navicon = document.querySelector('.Open');

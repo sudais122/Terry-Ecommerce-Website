@@ -148,9 +148,8 @@ svgicon.forEach(icon =>{
                 </div>
         </div>
         `;
-
         WhlishtArray.push(WhishlistObj);
-        const ProductWhishlistContainer = document.querySelector('.product-wrapper');
+        const ProductWhishlistContainer = document.querySelector(".Product-Action");
         console.log(ProductWhishlistContainer);
     });
 });
