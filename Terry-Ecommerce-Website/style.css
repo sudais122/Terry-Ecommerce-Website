@@ -655,6 +655,7 @@ main{
 .search,
 .addtocart {
   width: 50px;
+  cursor: pointer;
   height: 50px;
   background-color: #f1f1f1;
   border-radius: 4px;

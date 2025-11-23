@@ -744,7 +744,7 @@ form > a:hover{
 .product-wrapper {
     padding: 2rem 10rem 2rem 10rem;
   width: 100%;
-  display: none;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 0.2fr));
   gap: 1.5rem;
 }
@@ -752,7 +752,6 @@ form > a:hover{
 .product-card {
   width: 100%;
   max-width: 300px;
-  display: flex;
   flex-direction: column;
 }
 .product-image-box {

@@ -88,5 +88,3 @@ currencyItemList.forEach(item => {
         MainCurrency.innerText = ShortText;
     });
 });
-
-//form validation
