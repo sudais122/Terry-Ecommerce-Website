@@ -9,10 +9,11 @@ body {
 }
 nav {
   width: 100%;
+  padding-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 5.5em;
+  height: 6em;
 }
 .nav {
   justify-content: space-between;
@@ -336,6 +337,7 @@ nav {
 }
 .Currecy-con{
     width: 170px;
+    z-index: 999;
     display: none;
     background-color: white;
     position: absolute;
@@ -345,6 +347,7 @@ nav {
     padding: 10px;
 }
 .Currecy-con ul{
+  z-index: 1000;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -386,4 +389,350 @@ main{
     .more-icon{
         display: block;
     }
+}
+/* HERO BACKGROUND */
+.Hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  z-index: 1;
+  background-image: url('https://furnify-demo.myshopify.com/cdn/shop/files/slider_01_84211761-619b-468c-bec1-132e633b6ede.png?v=1613685275');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+.Text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 40%;
+  padding: 5rem;
+  margin-left: 5rem;
+  opacity: 0;
+  animation: slideIn 1s ease-out forwards;
+}
+
+.Text p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.Text h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.Text a {
+  color: black;
+  transition: 0.3s color ease-in-out;
+  font-size: 1.1rem;
+  width: fit-content;
+  border-bottom: 2px solid transparent;
+}
+
+.Text a:hover {
+  color: #F0A5A9;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-60px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@media (max-width: 1024px) {
+  .Text {
+    width: 60%;
+    padding: 3rem;
+    margin-left: 2rem;
+  }
+
+  .Text h1 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .Hero {
+    background-size: cover;
+    height: 65vh;
+  }
+
+  .Text {
+    width: 100%;
+    padding: 2rem;
+    margin: 0;
+    margin-top: 10rem;
+  }
+
+  .Text h1 {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .Hero {
+    background-size: cover;
+    height: 55vh;
+  }
+
+  .Text {
+    padding: 1.5rem;
+    margin-top: 6rem;
+  }
+
+  .Text h1 {
+    font-size: 2rem;
+  }
+
+  .Text p {
+    font-size: 1rem;
+  }
+}
+/* Product Section */
+.Product-Text{
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 10vh;
+}
+.Product-Text h2{
+  color: #242424;
+    font-size: 2.5rem;
+    font-weight: 400;
+}
+.Product-Text p{
+    font-size: 1rem;
+    color: #2B2B2B;
+}
+.Main-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 0 4rem 0;
+}
+
+.Card {
+  width: 78vw;
+  height: 95%;
+  display: grid;
+
+  /* YOUR ORIGINAL GRID — kept exactly */
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(2, 1fr);
+
+  gap: 1rem; 
+  padding: 1rem;
+}
+
+.Grid-item {
+  background-color: #fff;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.Item-image{
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  background-color: #F9F9F9;
+}
+
+.item-info{
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.Item-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-info h5{
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.item-info p{
+  color: #000000;
+  font-weight: 300;
+}
+
+.item-info a{
+  text-decoration: none;
+  color: black;
+  transition: 0.3s color ease-in-out;
+}
+
+.item-info a:hover{
+  color: #F0A5A9;
+}
+.item-info div{
+  display: flex;
+  gap: 5px;
+}
+.Item-image {
+  width: 100%;
+  height: 80%;
+  position: relative;     
+  background-color: #F9F9F9;
+  overflow: hidden;
+}
+
+.Item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.Discount-Details {
+  position: absolute;
+  top: 0.7rem;            
+  left: 0.7rem;           
+  display: flex;
+  gap: 0.5rem;           
+  z-index: 10;
+  font-size: 0.8rem;
+}
+
+.sale, 
+.Off {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 3px;
+  background-color: black;
+  color: white;
+  font-weight: 400;
+}
+.Item-image {
+  position: relative;
+  overflow: hidden;
+}
+.Product-Action {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  transition: transform 0.5s ease-in-out;
+  z-index: 10;
+}
+.Item-image:hover .Product-Action {
+  transform: scale(1);
+}
+.addtowhishlost,
+.search,
+.addtocart {
+  width: 50px;
+  height: 50px;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0.7);
+  transition: 0.5s ease-in-out;
+}
+.addtowhishlost:hover,
+.search:hover,
+.addtocart:hover {
+  background-color: #F0A5A9;
+  transform: scale(0.85);
+}
+.addtowhishlost svg,
+.search svg,
+.addtocart svg {
+  width: 20px;
+  height: 20px;
+  stroke: black;
+  transition: stroke 0.5s ease-in-out;
+}
+
+.addtowhishlost:hover svg,
+.search:hover svg,
+.addtocart:hover svg {
+  stroke: white;
+}
+
+@media (max-width: 992px) {
+  .Card {
+    width: 90vw;
+  }
+    .Discount-Details {
+    width: 12rem;
+    padding: 0.6rem;
+    font-size: 0.75rem;
+  }
+
+  .sale, .Off {
+    width: 2.7rem;
+    height: 1.3rem;
+  }
+}
+@media (max-width: 768px) {
+  .Card {
+    width: 95vw;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-template-rows: repeat(4, 1fr);    
+  }
+    .Discount-Details {
+    padding: 0.5rem;
+    font-size: 0.7rem;
+  }
+
+  .sale, .Off {
+    width: 2.4rem;
+    height: 1.2rem;
+  }
+}
+@media (max-width: 480px) {
+  .Card {
+    grid-template-columns: repeat(1, 1fr); 
+    grid-template-rows: repeat(8, 1fr);
+  }
+
+  .Item-image {
+    height: 60%;
+  }
+    .Discount-Details {
+    width: 8rem;
+    padding: 0.4rem;
+    font-size: 0.65rem;
+  }
+
+  .sale, .Off {
+    width: 2rem;
+    height: 1.1rem;
+  }
 }

@@ -88,3 +88,6 @@ currencyItemList.forEach(item => {
         MainCurrency.innerText = ShortText;
     });
 });
+
+//whist list and cart count
+

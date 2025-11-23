@@ -405,7 +405,7 @@ main{
 /* fomr styling */
 .Form{
     display: flex;
-    flex-direction: column;   /* important fix */
+    flex-direction: column;  
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -512,7 +512,6 @@ header h3{
 .Submit button:hover{
     background-color: black;
 }
-
 .Submit a{
     text-decoration: none;
     font-size: clamp(0.7rem, 2vw, 1rem);
@@ -533,32 +532,6 @@ form > a{
     margin-bottom: 1.5rem;
     transition: color 0.2s ease-in-out;
 }
-/* erro mesage on form */
-#Error-Message{
-    border-radius: 5px;
-    width: 35rem;
-    padding: 0.7rem;
-    background-color: #FFF7F6;
-    border: 1px solid #D02E2F;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.5rem; /* space before form */
-}
-#Error{
-    padding: 0.7rem;
-    color: #D02E2F;
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    font-size: 0.8rem;
-}
-
 form > a:hover{
     color: #F0A5A9;
 }
@@ -662,7 +635,7 @@ form > a:hover{
     cursor: pointer;
 }
 
-/* Newsletter Input + Button */
+/* Newsletter Input and Button */
 .newsletter {
     display: flex;
     flex-direction: column;
@@ -766,4 +739,102 @@ form > a:hover{
     .newsletter button {
         width: 100%;
     }
+}
+/* fill whish list */
+.product-wrapper {
+    padding: 2rem 10rem 2rem 10rem;
+  width: 100%;
+  display: none;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 0.2fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+.product-image-box {
+  width: 100%;
+  height: 280px;
+  background-color: #F9F9F9;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ACTION BAR */
+.product-action-bar {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+}
+.product-image-box:hover .product-action-bar {
+  transform: scale(1);
+}
+.action-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  cursor: pointer;
+
+  transition: 0.3s ease-in-out;
+}
+
+.action-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: black;
+  transition: stroke 0.3s ease-in-out;
+}
+.action-btn:hover {
+  background-color: #F0A5A9;
+  transform: scale(0.9);
+}
+
+.action-btn:hover svg {
+  stroke: white;
+}
+.product-info {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+.product-info a{
+    text-decoration: none;
+}
+.product-info a h5{
+    transition: 0.2s color ease-in-out;
+}
+.product-info a h5:hover{
+    color: #F0A5A9;
+}
+.product-title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
 }
