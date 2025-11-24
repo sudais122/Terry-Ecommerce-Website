@@ -1,3 +1,5 @@
+const { log } = require("console");
+
 const NavBarMAIN = document.querySelector('.resposive-navbar');
 const Navbar = document.querySelector('.Navbar');
 const Navbarlinks = document.querySelectorAll('.Navbarlinks');
@@ -91,6 +93,7 @@ currencyItemList.forEach(item => {
 
 const MainProduct  = document.querySelectorAll('.Grid-item');
 
+// Whishlist Functionality
 const svgicon = document.querySelectorAll('.addtowhishlost svg');
 const WhistlistIcon = function(){
     svgicon.forEach(icon =>{
@@ -107,13 +110,13 @@ let WhlishtArray = [];
 svgicon.forEach(icon =>{
     icon.addEventListener('click' , (event) =>{
         event.stopPropagation();
-        const MainBox = icon.closest('.Grid-item');
-        const image = MainBox.querySelector('.Item-image img').src;
+        const MainBox = icon.closest('#product-wrapper');
+        const image = MainBox.querySelector('.Item-image img');
         const title = MainBox.querySelector('.tittle');
         const price = MainBox.querySelector('.price');
 
         const WhishlistObj = {
-            imageSrc: image,
+            imageSrc: image.src,
             titleText: title.innerText,
             priceText: price.innerText
         };
@@ -143,13 +146,78 @@ svgicon.forEach(icon =>{
                 </div>
                 </div>
                 <div class="product-info">
-                <a href="#"><h5 class="product-title">${title}</h5></a>
-                <p class="product-price"><span>¥</span>${price}</p>
+                <a href="#"><h5 class="product-title">${title.innerText}</h5></a>
+                <p class="product-price"><span>¥</span>${price.innerText}</p>
                 </div>
         </div>
         `;
         WhlishtArray.push(WhishlistObj);
-        const ProductWhishlistContainer = document.querySelector(".Product-Action");
+        const ProductWhishlistContainer = document.querySelector("#product-wrapper")
         console.log(ProductWhishlistContainer);
+        ProductWhishlistContainer.appendChild(NewWhishlist);
     });
+});
+
+// add to cart code only popup start here
+const cartIcons = document.querySelectorAll('.addtocart');
+
+cartIcons.forEach(icon => {
+  icon.addEventListener('click', (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    const mainContainer = event.currentTarget.closest('.Grid-item');
+    const image = mainContainer.querySelector('.Item-image img');
+    const title = mainContainer.querySelector('.tittle');
+
+    const Popup = document.createElement('div');
+    Popup.classList.add('confirm-main');
+    Popup.innerHTML = `
+  <div class="confirm-box">
+    <div class="item-image">
+      <img src="${image.src}" alt="">
+    </div>
+
+    <div class="item-text">
+      <button class="remove">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"/>
+        </svg>
+      </button>
+
+      <div class="text-item">
+        <h3>${title.innerText}</h3>
+        <p class="message">Added to Cart Successfully!</p>
+      </div>
+
+      <div class="buttons">
+        <a href="Terry-Ecommerce-Website/Accoounts/ShoppingCart.html"><button>VIEW CART</button></a>
+        <a href=""><button>CHECKOUT</button></a>
+      </div>
+    </div>
+  </div>`;
+    document.body.appendChild(Popup);
+    const removeBtn = Popup.querySelector('.remove');
+    removeBtn.addEventListener('click', () => {
+      document.body.removeChild(Popup);
+    });
+    setTimeout(() => Popup.remove(), 3000);
+    setTimeout(() => Popup.classList.add('show'), 10);
+});
+});
+// user move to top button styling start here
+const Toptodown = document.querySelector('.Toptodown');
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    Toptodown.style.display = "flex";
+
+    setTimeout(() => {
+      Toptodown.classList.add("show");
+    }, 100);
+  } else {
+    Toptodown.classList.remove("show");
+
+    setTimeout(() => {
+      Toptodown.style.display = "none";
+    }, 100); // 
+  }
 });

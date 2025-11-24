@@ -6,6 +6,19 @@
 }
 body {
   background-color: white;
+  pointer-events: auto; 
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity .3s ease;
+  pointer-events: auto; 
+}
+.show-overlay {
+  opacity: 1;
 }
 nav {
   width: 100%;
@@ -736,4 +749,178 @@ main{
     width: 2rem;
     height: 1.1rem;
   }
+}
+
+/* conform addto cart */
+.confirm-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0; 
+  left: 50%;
+  transform: translate(-50%, -100%); 
+  width: 90%;
+  max-width: 450px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  padding: 1.5rem 0 1.5rem 0;
+  opacity: 0;  
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  border-radius: 6px;
+  pointer-events: auto; 
+}
+body .confirm-main{
+    z-index: 999999;
+}
+.confirm-main.show {
+  top: 5%; 
+  transform: translate(-50%, 0); 
+  opacity: 1; 
+}
+
+.confirm-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%; 
+}
+
+
+.item-image {
+  flex: 0 0 35%;
+  height: 100px;
+  overflow: hidden;
+}
+
+.item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.item-text {
+  flex: 1;
+  gap: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.remove {
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border: none;
+  border-radius: 50%;
+  background: #efefef;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+}
+.remove svg {
+  width: 14px;
+  height: 14px;
+  stroke: #333;
+  transition: 0.3s;
+}
+.remove:hover {
+  background: #F0A5A9;
+}
+.remove:hover svg {
+  stroke: #fff;
+}
+
+.text-item h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0 0 0.3rem;
+}
+
+.message {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.buttons a button {
+  background: #F2F2F2;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.buttons a button:hover {
+  background: #F0A5A9;
+  color: #fff;
+}
+
+/* 🔹 Responsive */
+@media (max-width: 480px) {
+  .confirm-main {
+    top: 20%;
+    padding: 0.8rem;
+  }
+  .item-image {
+    flex: 0 0 30%;
+    height: 80px;
+  }
+  .text-item h3 {
+    font-size: 0.9rem;
+  }
+  .buttons a button {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+ /* add a button that a user got to top of the website */
+.Toptodown {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: black;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    background-color 0.3s ease-in-out;
+}
+.Toptodown svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+  transform: rotate(90deg);
+}
+/* When visible */
+.Toptodown.show {
+  opacity: 1;
+  transform: translateY(0);
+  display: flex;
+}
+
+/* Hover effect */
+.Toptodown:hover {
+  background-color: #F0A5A9;
 }
