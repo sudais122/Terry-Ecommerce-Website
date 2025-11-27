@@ -1,5 +1,3 @@
-const { log } = require("console");
-
 const NavBarMAIN = document.querySelector('.resposive-navbar');
 const Navbar = document.querySelector('.Navbar');
 const Navbarlinks = document.querySelectorAll('.Navbarlinks');
@@ -153,14 +151,12 @@ svgicon.forEach(icon =>{
         `;
         WhlishtArray.push(WhishlistObj);
         const ProductWhishlistContainer = document.querySelector("#product-wrapper")
-        console.log(ProductWhishlistContainer);
         ProductWhishlistContainer.appendChild(NewWhishlist);
     });
 });
 
 // add to cart code only popup start here
 const cartIcons = document.querySelectorAll('.addtocart');
-
 cartIcons.forEach(icon => {
   icon.addEventListener('click', (event) => {
     event.stopPropagation();
@@ -204,6 +200,9 @@ cartIcons.forEach(icon => {
     setTimeout(() => Popup.classList.add('show'), 10);
 });
 });
+// actually add to the cart popup end here
+const Cart  = document.getElementById('Shoppingcart')
+console.log(Cart);
 // user move to top button styling start here
 const Toptodown = document.querySelector('.Toptodown');
 window.addEventListener("scroll", () => {

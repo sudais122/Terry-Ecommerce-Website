@@ -924,3 +924,284 @@ body .confirm-main{
 .Toptodown:hover {
   background-color: #F0A5A9;
 }
+.Special-offer {
+  width: 100%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timer{
+  width: 20%;
+  height: 100%;
+  position: absolute;
+  margin-top: 5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.Latest-Main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 50vh;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 0 4rem 0;
+}
+.Days,
+.Hrs,
+.min,
+.Sec{
+  width: 80%;
+  display: flex;
+  color: white;
+  font-weight: 400;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  background-color: #F3B1B6;
+  border-radius: 5px;
+}
+.Days p,
+.Hrs p,
+.min p,
+.Sec p{
+  font-size: small;
+}
+.Days h5,
+.Hrs h5,
+.min h5,
+.Sec h5{
+  font-weight: 400;
+}
+.Baners-Mian{
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.Banner{
+  width: 38%;
+  height: 70%;
+  overflow: hidden;   
+}
+
+.Banner img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;     
+}
+
+.Main-Div{
+  width: 100%;
+  flex-direction: column;
+  height: 40vh;
+  background-color: #F8F8F8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.TEXT{
+  flex-direction: column;
+  width: 35%;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  color: #242424;
+}
+.TEXT h1{
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: #242424;
+}.Text p{
+  font-weight: lighter;
+color: #242424;
+}
+.input{
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  display: flex;
+}
+.input input{
+    border: #CACACA 1px solid;
+    width: 30%;
+    padding-left: 15px;
+    height: 3.5rem;
+}
+.input button{
+  height: 3.5rem;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0rem 2rem 0rem 2rem;
+  transition: 0.3s color ease-in;
+}
+.input button:hover{
+  color: white;
+  background-color: #F0A5A9;
+}
+/* articles sectios */
+.Hero2{
+  gap: 2rem;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 5rem;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Articles{
+  width: 85%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.Art1 img,
+.Art2 img,
+.Art3 img{
+  width: 100%;
+  height: 50%;
+  padding: 10px;
+  object-fit: cover;
+}
+.Art1,
+.Art2,
+.Art3{
+  overflow: hidden;
+  width: 35%;
+  height: 100%;
+}
+.Art1 a,
+.Art2 a,
+.Art3 a{
+  text-decoration: none;
+  color: black;
+}
+.Art1 a h2,
+.Art2 a h2,
+.Art3 a h2{
+  padding: 10px 10px;
+  font-weight: 400;
+  transition: 0.4s color ease-in-out;
+  font-size: 25px;
+}
+.Art1 a h2:hover,
+.Art2 a h2:hover,
+.Art3 a h2:hover{
+  color: #F0A5A9;
+}
+.Art1 i,
+.Art2 i,
+.Art3 i{
+  padding: 0px 10px;
+  font-size: 14px;
+}
+.Art1 p,
+.Art2 p,
+.Art3 p{
+  padding: 20px 10px;
+  font-size: 14px;
+}
+.Art1 #a,
+.Art2 #a,
+.Art3 #a{
+  text-decoration: none;
+  color: black;
+  transition: 0.3s color ease-in-out;
+}
+.Art1 span,
+.Art2 span,
+.Art3 span{
+  color: #F0A5A9;
+}
+.Art1 #a:hover,.Art2 #a:hover,.Art3 #a:hover{
+  color: #f1a5aa;
+}
+/* footer styling */
+/* footer styling */
+.footer {
+    margin-top: 5rem;
+    width: 100%;
+    background-color: #F7F7F7;
+    padding: 6rem 6rem;
+}
+
+.footer-container {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+.footer-box h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.footer-box p,
+.footer-box li {
+    color: #555;
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    list-style: none;
+}
+
+.footer-box ul li:hover {
+    color: #ECA3A9;
+    cursor: pointer;
+}
+
+/* Newsletter Input and Button */
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.newsletter input {
+    border: none;
+    width: 100%;
+    padding: 0.9rem;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    padding: 0.9rem;
+    width: 100%;
+    background-color: #ECA3A9;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s ease-in-out;
+}
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+  }

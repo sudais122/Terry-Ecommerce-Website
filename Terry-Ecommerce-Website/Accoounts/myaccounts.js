@@ -87,4 +87,3 @@ currencyItemList.forEach(item => {
         MainCurrency.innerText = ShortText;
     });
 });
-
