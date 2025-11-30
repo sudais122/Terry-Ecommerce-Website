@@ -93,12 +93,18 @@ const MainProduct  = document.querySelectorAll('.Grid-item');
 
 // Whishlist Functionality
 const svgicon = document.querySelectorAll('.addtowhishlost svg');
-const WhistlistIcon = function(){
-    svgicon.forEach(icon =>{
-        icon.addEventListener('click' , (event) => {
+
+const WhistlistIcon = function() {
+    svgicon.forEach(icon => {
+        icon.addEventListener('click', (event) => {
             event.stopPropagation();
-            icon.style.fill = '#000000ff';
-            icon.style.stroke = 'none';
+            if (icon.style.fill === 'rgb(0, 0, 0)' || icon.style.fill === '#000000ff') {
+                icon.style.fill = '';
+                icon.style.stroke = '';
+            } else 
+                icon.style.fill = '#000000ff';
+                icon.style.stroke = '#000000ff';
+            
         });
     });
 };
@@ -220,3 +226,5 @@ window.addEventListener("scroll", () => {
     }, 100); // 
   }
 });
+const Totals = document.querySelector('.totals');
+console.log(Totals);

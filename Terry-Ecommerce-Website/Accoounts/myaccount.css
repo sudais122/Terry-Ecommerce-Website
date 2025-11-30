@@ -30,7 +30,21 @@ nav {
   display: flex;
   flex-wrap: wrap;
 }
-
+.Nav-user{
+    padding: 4rem 11rem 3rem 14rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.icon svg:hover{
+    outline: #ECA3A9;
+}
+.icon-user img{
+    width: 9rem;
+}
 .pages {
   width: fit-content;
   display: flex;
@@ -428,6 +442,13 @@ main{
     .Form form{
         width: 60%;
     }
+        .other-options {
+        padding: 0 2rem;
+    }
+    .Shipping, .totals {
+        width: 48%;
+        padding: 30px 20px;
+    }
 }
 
 @media (max-width: 768px){
@@ -440,6 +461,10 @@ main{
     .Form form{
         width: 92%;
         margin-top: 3rem;
+    }
+    #Quantity{
+        width: 100%;
+        height: 3rem;
     }
 }
 
@@ -535,13 +560,6 @@ form > a{
 form > a:hover{
     color: #F0A5A9;
 }
-/* responsive */
-@media (max-width: 768px){
-    #Error-Message{
-        width: 90%;
-        margin: 2rem auto 0 auto;
-    }
-}
 @media (max-width: 480px){
     #Error-Message{
         width: 95%;
@@ -561,6 +579,20 @@ form > a:hover{
         flex-direction: column;
         gap: 1rem;
         padding: 1rem 20px;
+    }
+    .option-main{
+        padding: 2rem 4rem 2rem 4rem  !important;
+    }
+    .option-main button{
+        width: 100% !important;
+        padding: 1rem 1rem 1rem 2rem !important;
+    }
+        .Shipping > p {
+        font-size: 1.1rem;
+    }
+
+    .Shipping, .totals {
+        padding: 20px 15px;
     }
 }
 @media (max-width: 600px){
@@ -669,6 +701,7 @@ form > a:hover{
     height: 5rem;
 }
 #Shoppingcart{
+    display: none;
     width: 100%;
     height: 20rem;
 }
@@ -738,6 +771,9 @@ form > a:hover{
     .newsletter input,
     .newsletter button {
         width: 100%;
+    }
+        .option-main{
+        padding: 2rem 4rem 1rem 7rem  !important;
     }
 }
 /* fill whish list */
@@ -838,3 +874,324 @@ form > a:hover{
   color: #000;
 }
 
+.cart-Main{
+    flex-direction: column;
+    padding: 6rem 0rem 0rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+.cart{
+    display: flex;
+    width: 80%;
+    height: 5vh;
+}
+.main-item{
+    display: flex;
+    width: 80%;
+    height: 25vh;
+}
+.Cart-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 8vh;
+    height: auto;
+    font-size: 12px;
+    border: 1px solid #DDDDDD;
+    font-weight: bold;
+    border-left: none;
+}
+.cart-item{
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+    height: 8vh;
+    height: auto;
+    font-size: 12px;
+    border: 1px solid #DDDDDD;
+    font-weight: bold;
+    border-left: none;
+}
+.cart-item p{
+    font-weight: 400;
+}
+#image{
+    width: 15%;
+    border-left:  1px solid #DDDDDD;
+}
+#Image{
+    padding: 1rem;
+    width: 15%;
+    overflow: hidden;
+    border-top: none;
+    border-right: 1px solid #DDDDDD;
+    border-left: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
+#Image img{
+    width: 100%;
+}
+#product-name{
+    width: 27%;
+}
+#Product-name{
+    width: 27%;
+    border-top: none;
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
+#quantity{
+    width: 20%;
+}
+#Quantity{
+    width: 20%;
+    border-top: none;
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
+.Quan-count{
+    font-weight: 400;
+    display: flex;
+    width: 50%;
+    height: 2.5rem;
+    border: 1px solid #DDDDDD;
+    border-radius: 5px;
+}
+#Product-name a:hover{
+    color: #ECA3A9;
+}
+#total{
+    width: 10%;
+}
+#Total{
+    width: 10%;
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 0px;
+}
+#Price{
+    width: 10%;
+    border-top: none;
+    border-bottom: 1px solid #DDDDDD;
+    border-right: 1px solid #DDDDDD;
+}
+#remove{
+    width: 13%;
+}
+#Remove p:hover{
+    cursor: pointer;
+    color: #ECA3A9;
+}
+#Remove{
+    transition: 0.3s color ease-in-out;
+    width: 13%;
+    border-top: none;
+    border-right: 1px solid #DDDDDD;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.dcrse,.count,.Incse{
+    color: #777777;
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#Product-name a{
+    text-decoration: none;
+    color: black;
+    transition: 0.3s color ease-in-out;
+}
+#Remove i:hover{
+    color: #F0A5A9;
+    cursor: pointer;
+}
+.option-main{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 4rem 9rem;
+}
+.option-main button{
+    cursor: pointer;
+    border-radius: 0px;
+    border: none;
+    color: #373F4D;
+    padding: 1rem 1.5rem;
+    transition: 0.3s color ease-in-out;
+    transition: 0.3s  background-color ease-in-out;
+}
+.option-main button:hover{
+    background-color: #F0A5A9;
+    color: white;
+}
+.option-main button p{
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+.other-options {
+    display: flex;
+    padding: 0rem 0rem 0rem 9rem;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap; /* important for responsiveness */
+}
+
+.Shipping, .totals {
+    width: 44%;
+    padding: 45px 30px 50px;
+    gap: 1rem;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: #F9F9F9;
+    border: 1px solid #EBEBEB;
+}
+
+.Shipping input {
+    width: 95%;
+    padding-left: 1rem;
+    height: 2.5rem;
+    border: 1px solid #EBEBEB;
+}
+
+.Shipping input:focus {
+    outline: none;
+    border: 1px solid #F0A5A9;
+}
+
+.Shipping > p,.totals > p {
+    font-weight: bolder;
+    font-size: 1.3rem;
+}
+
+.Shipping button, .totals button {
+    cursor: pointer;
+    width: 12rem;
+    border-radius: 0px;
+    border: none;
+    color: #373F4D;
+    padding: 1rem 1.5rem;
+    transition: 0.3s color ease-in-out, 0.3s background-color ease-in-out;
+}
+
+.Shipping button:hover, .totals button:hover {
+    background-color: #000;
+    color: white;
+}
+
+/* 2×2 table */
+.main-table {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.main-table .cell {
+    border: 1px solid #EBEBEB;
+    display: flex;
+    padding: 1rem;
+}
+
+.main-table p {
+    margin: 0;
+    text-align: center;
+}
+/* resposoive */
+@media (max-width: 600px){
+
+    .cart-Main{
+        padding-top: 2rem;
+    }
+
+    .cart{
+        width: 600px; 
+        overflow-x: auto; 
+    }
+
+    .main-item{
+        height: 100%;
+        width: 600px; 
+        overflow-x: auto;
+    }
+    #Quantity{
+        width: 80%;
+        height: 2rem;
+    }
+    .Cart-item,
+    .cart-item{
+        white-space: nowrap;
+    }
+}
+@media (max-width: 768px) {
+    .cart{
+        display: none;
+    }
+    .other-options{
+        flex-direction: column;
+        padding: 0rem 0rem 0rem 7.5rem;
+        width: 100%;
+    }
+    .Shipping,.totals{
+        width: 85%;
+    }
+    .Quan-count{
+        width: 30%;
+        height: 2rem;
+    }
+    .main-item{
+        width: 70%;
+        height: 100%;
+        border: 1px solid #DDDDDD;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #Image,#Product-name,#Price,#Quantity,#Total,#Remove{
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 0px;
+        border-bottom: 0px;
+    }
+    #Image{
+        width: 100%;
+        height: auto;
+    }
+    #Quantity{
+        width: 60%;
+        height: 2rem;
+    }
+    .option-main{
+        padding: 2rem 6.5rem !important;
+    }
+    .other-options {
+        padding: 0rem 3rem 0rem 3rem;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .Shipping, .totals {
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .Shipping button, .totals button,
+    .Shipping input {
+        width: 100%;
+    }
+
+    .main-table {
+        grid-template-columns: 1fr 1fr;
+    }
+}

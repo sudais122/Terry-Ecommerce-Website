@@ -424,6 +424,7 @@ main{
   padding: 5rem;
   margin-left: 5rem;
   opacity: 0;
+  padding: 3rem 0rem 0rem 0rem;
   animation: slideIn 1s ease-out forwards;
 }
 
@@ -518,7 +519,7 @@ main{
   justify-content: center;
   align-items: center;
   gap: 10px;
-  height: 10vh;
+  height: auto;
 }
 .Product-Text h2{
   color: #242424;
@@ -533,24 +534,45 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+
   gap: 2rem;
   flex-wrap: wrap;
   padding: 2rem 0 4rem 0;
 }
 
 .Card {
-  width: 78vw;
-  height: 95%;
+  width: 78%;
+  height: auto;
   display: grid;
-
-  /* YOUR ORIGINAL GRID — kept exactly */
   grid-template-columns: repeat(4, 1fr); 
-  grid-template-rows: repeat(2, 1fr);
-
+  grid-template-rows: repeat(1, 1fr);
   gap: 1rem; 
   padding: 1rem;
+}
+.Cards {
+  width: 78%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Tablet (medium screens) */
+@media (max-width: 992px) {
+  .Cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (small screens) */
+@media (max-width: 576px) {
+  .Cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .input input{
+    width: 40%;
+  }
 }
 
 .Grid-item {
@@ -701,7 +723,9 @@ main{
 
 @media (max-width: 992px) {
   .Card {
-    width: 90vw;
+    width: 78%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
     .Discount-Details {
     width: 12rem;
@@ -715,10 +739,15 @@ main{
   }
 }
 @media (max-width: 768px) {
-  .Card {
+    .Cards {
+        width: 95vw;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+  .Cards {
     width: 95vw;
     grid-template-columns: repeat(2, 1fr); 
-    grid-template-rows: repeat(4, 1fr);    
+    grid-template-rows: repeat(1, 1fr);    
   }
     .Discount-Details {
     padding: 0.5rem;
@@ -735,7 +764,10 @@ main{
     grid-template-columns: repeat(1, 1fr); 
     grid-template-rows: repeat(8, 1fr);
   }
-
+  .Cards{
+    grid-template-columns: repeat(1, 1fr); 
+    grid-template-rows: repeat(4, 1fr);
+  }
   .Item-image {
     height: 60%;
   }
@@ -749,6 +781,7 @@ main{
     width: 2rem;
     height: 1.1rem;
   }
+  
 }
 
 /* conform addto cart */
@@ -926,12 +959,20 @@ body .confirm-main{
 }
 .Special-offer {
   width: 100%;
-  width: 100%;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem 2rem; 
 }
+
+.Special-offer img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-width: 1200px;  
+}
+
 .timer{
   width: 20%;
   height: 100%;
@@ -942,16 +983,17 @@ body .confirm-main{
   flex-direction: column;
   gap: 0.3rem;
 }
-.Latest-Main{
+.Latest-Main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 50vh;
+  width: 100%;
+  height: auto;
   gap: 2rem;
   flex-wrap: wrap;
   padding: 2rem 0 4rem 0;
 }
+
 .Days,
 .Hrs,
 .min,
@@ -979,41 +1021,41 @@ body .confirm-main{
 .Sec h5{
   font-weight: 400;
 }
-.Baners-Mian{
+.Baners-Mian {
   width: 100%;
-  height: 50vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
+  padding: 0rem 0rem 5rem 0rem;
 }
+
 
 .Banner{
   width: 38%;
-  height: 70%;
+  height: auto;
   overflow: hidden;   
 }
 
 .Banner img{
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   display: block;     
 }
 
 .Main-Div{
-  width: 100%;
   flex-direction: column;
-  height: 40vh;
   background-color: #F8F8F8;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 3rem;
+  padding: 5rem 0rem 7rem 0rem;
 }
 .TEXT{
   flex-direction: column;
-  width: 35%;
   display: flex;
   gap: 0.5rem;
   justify-content: center;
@@ -1040,6 +1082,10 @@ color: #242424;
     padding-left: 15px;
     height: 3.5rem;
 }
+
+.input input:focus{
+    outline: none;
+}
 .input button{
   height: 3.5rem;
   cursor: pointer;
@@ -1057,9 +1103,7 @@ color: #242424;
 .Hero2{
   gap: 2rem;
   flex-direction: column;
-  width: 100%;
-  margin-top: 5rem;
-  height: 70vh;
+  padding: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1134,10 +1178,7 @@ color: #242424;
   color: #f1a5aa;
 }
 /* footer styling */
-/* footer styling */
 .footer {
-    margin-top: 5rem;
-    width: 100%;
     background-color: #F7F7F7;
     padding: 6rem 6rem;
 }
@@ -1205,3 +1246,58 @@ color: #242424;
         text-align: center;
     }
   }
+  /* Responsive Fix */
+@media (max-width: 1024px) {
+  .Articles {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .Art1, .Art2, .Art3 {
+    width: 45%;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .Articles {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+  }
+
+  .Art1, .Art2, .Art3 {
+    width: 90%;
+    height: auto;
+  }
+
+  .Art1 img, .Art2 img, .Art3 img {
+    height: auto;
+  }
+}
+@media (max-width: 800px) {
+  .item-info{
+    font-size: 0.8rem;
+    gap: 5px;
+    padding-top: 1rem;
+  }
+  .item-info h5{
+    font-size: 0.8rem;
+  }
+}
+@media (max-width: 480px) {
+  .Art1, .Art2, .Art3 {
+    width: 100%;
+  }
+  .TEXT h1{
+    font-size: 2rem;
+  }
+  .input button{
+    padding: 0rem 1rem 0rem 1rem ;
+    height: 3rem;
+  }
+  .input input {
+    height: 3rem;
+    width: 45%;
+  }
+}
