@@ -87,3 +87,12 @@ currencyItemList.forEach(item => {
         MainCurrency.innerText = ShortText;
     });
 });
+//// array of all the comtry codes and names
+console.log(countries);
+const CountrySelect = document.getElementById('country');
+countries.forEach(country => {
+    const option = document.createElement('option');
+    option.value = country.code;
+    option.text = country.name;
+    CountrySelect.appendChild(option);
+})

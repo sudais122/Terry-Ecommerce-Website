@@ -226,5 +226,3 @@ window.addEventListener("scroll", () => {
     }, 100); // 
   }
 });
-const Totals = document.querySelector('.totals');
-console.log(Totals);
