@@ -114,11 +114,13 @@ let WhlishtArray = [];
 svgicon.forEach(icon =>{
     icon.addEventListener('click' , (event) =>{
         event.stopPropagation();
-        const MainBox = icon.closest('#product-wrapper');
-        const image = MainBox.querySelector('.Item-image img');
+        const MainBox = icon.closest('.Grid-item');
+        console.log(MainBox);
+        const image = MainBox.querySelector('.Item-image > a  > img');
         const title = MainBox.querySelector('.tittle');
         const price = MainBox.querySelector('.price');
 
+        console.log(image);
         const WhishlistObj = {
             imageSrc: image.src,
             titleText: title.innerText,
@@ -163,10 +165,20 @@ svgicon.forEach(icon =>{
 
 // add to cart code only popup start here
 const cartIcons = document.querySelectorAll('.addtocart');
+let count  = 0;
+count++;
+document.querySelector('.Count p').innerText = count;
+
 cartIcons.forEach(icon => {
+    icon.addEventListener('click', () => {
+    count++;
+    document.querySelector('.Count p').innerText = count;
+});
+
   icon.addEventListener('click', (event) => {
     event.stopPropagation();
     event.preventDefault();
+    
     const mainContainer = event.currentTarget.closest('.Grid-item');
     const image = mainContainer.querySelector('.Item-image img');
     const title = mainContainer.querySelector('.tittle');
@@ -192,8 +204,8 @@ cartIcons.forEach(icon => {
       </div>
 
       <div class="buttons">
-        <a href="Terry-Ecommerce-Website/Accoounts/ShoppingCart.html"><button>VIEW CART</button></a>
-        <a href=""><button>CHECKOUT</button></a>
+        <a href="Accoounts/ShoppingCart.html"><button>VIEW CART</button></a>
+        <a href="Accoounts/Custamerdetail.html"><button>CHECKOUT</button></a>
       </div>
     </div>
   </div>`;
@@ -204,10 +216,26 @@ cartIcons.forEach(icon => {
     });
     setTimeout(() => Popup.remove(), 3000);
     setTimeout(() => Popup.classList.add('show'), 10);
+
+    //pop up end here
+    const newitem = localStorage.setItem('hideDefaultCart', 'true');
+    console.log(newitem);
 });
 });
-// actually add to the cart popup end here
-const Cart  = document.getElementById('Shoppingcart')
+
+
+window.addEventListener('DOMContentLoaded', () => {
+    // Check if we are on the ShoppingCart page
+    if (window.location.pathname.includes('ShoppingCart.html')) {
+        const HideDefault = document.getElementById('Shoppingcart');
+        if (HideDefault && localStorage.getItem('hideDefaultCart') === 'true') {
+            HideDefault.style.display = 'none';
+            
+        }
+    }
+});
+
+const Cart  = document.querySelector('.cart-Main')
 console.log(Cart);
 // user move to top button styling start here
 const Toptodown = document.querySelector('.Toptodown');
