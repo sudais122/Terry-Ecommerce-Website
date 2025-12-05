@@ -1,0 +1,32 @@
+<!-- page2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="div" style="width: 100px; height: 100px; background-color: yellow;"></div>
+    <p id="msg"></p>
+    <script>
+        const div = document.querySelector('.div');
+        const Message = document.getElementById('msg');
+
+        // Check localStorage for flag
+        const removeDiv = localStorage.getItem('removeDiv');
+
+        if (removeDiv === 'true') {
+            div.style.display = 'none'; 
+            Message.innerText = 'Div is Removed Sucessfully';
+        }
+    </script>
+</body>
+</html>

@@ -120,7 +120,6 @@ svgicon.forEach(icon =>{
         const title = MainBox.querySelector('.tittle');
         const price = MainBox.querySelector('.price');
 
-        console.log(image);
         const WhishlistObj = {
             imageSrc: image.src,
             titleText: title.innerText,
@@ -166,6 +165,7 @@ svgicon.forEach(icon =>{
 // add to cart code only popup start here
 const cartIcons = document.querySelectorAll('.addtocart');
 let count  = 0;
+let ShoppingCart = [];
 count++;
 document.querySelector('.Count p').innerText = count;
 
@@ -182,7 +182,18 @@ cartIcons.forEach(icon => {
     const mainContainer = event.currentTarget.closest('.Grid-item');
     const image = mainContainer.querySelector('.Item-image img');
     const title = mainContainer.querySelector('.tittle');
+    const price = mainContainer.querySelector('.price');
 
+    const ShoppingCart = {
+        image: image.src,
+        tittle: title.innerText,
+        price: price.innerText
+    };
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.push(ShoppingCart);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    console.log(cart); // Check in console
+    
     const Popup = document.createElement('div');
     Popup.classList.add('confirm-main');
     Popup.innerHTML = `
@@ -218,25 +229,8 @@ cartIcons.forEach(icon => {
     setTimeout(() => Popup.classList.add('show'), 10);
 
     //pop up end here
-    const newitem = localStorage.setItem('hideDefaultCart', 'true');
-    console.log(newitem);
 });
 });
-
-
-window.addEventListener('DOMContentLoaded', () => {
-    // Check if we are on the ShoppingCart page
-    if (window.location.pathname.includes('ShoppingCart.html')) {
-        const HideDefault = document.getElementById('Shoppingcart');
-        if (HideDefault && localStorage.getItem('hideDefaultCart') === 'true') {
-            HideDefault.style.display = 'none';
-            
-        }
-    }
-});
-
-const Cart  = document.querySelector('.cart-Main')
-console.log(Cart);
 // user move to top button styling start here
 const Toptodown = document.querySelector('.Toptodown');
 window.addEventListener("scroll", () => {

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local Storage</title>
+</head>
+<body>
+    <p>Click to remove div an another page</p>
+    <button id="saveBtn">CLICK</button>
+    <script>
+    const Btn = document.getElementById('saveBtn');
+
+    Btn.addEventListener('click', () => {
+        // Set a flag in localStorage
+        localStorage.setItem('removeDiv', 'true');
+        alert('Div removal flag set. Open Page 2.');
+    });
+    </script>
+</body>
+</html>
