@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cromwellian chair</title>
+    <title>Sliding Door Wardrobe</title>
         <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="PDP.css">
 </head>
 <body>
+      <div class="preview"></div>
+<div class="overlay"></div>
     <nav>
       <div class="nav">
         <div class="Icon">
@@ -168,6 +170,19 @@
         <div class="price" style="font-size: 24px; color: #242424;"><p>$5,499</p></div>
         <div class="Avalibility" style="font-size: 14px; color: #242424;"><p>Availability: 8 left in stock</p></div>
         <div class="description" style="font-size: 14px; color: #242424; line-height: 1.2rem;"><p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will</p></div>
+        <div class="Size">
+          <p>Size: </p>
+          <div>M</div>
+          <div>L</div>
+          <div>XL</div>
+        </div>
+        <div class="Color">
+          <p>Color:</p>
+        <div class="colordiv" style="background-color: #FFD701;"></div>
+        <div class="colordiv" style="background-color: #808080;"></div>
+        <div class="colordiv" style="background-color: #FF01FF;"></div>
+        <div class="colordiv " style="background-color: #800000;"></div>
+        </div>
         <div class="Options">
             <div class="inc-dec">
               <div class="inc">+</div>
@@ -429,6 +444,103 @@
       document.querySelector('.Des-text').style.display = 'none';
     }
   });
+const Pic = document.querySelector('.product-pic');
+
+Pic.addEventListener('click', () => {
+
+  const Preview = document.createElement('div');
+  Preview.classList.add('Big-Box');
+
+  Preview.innerHTML = `
+      <span class="close-btn">&times;</span>
+      <img src="https://furnify-demo.myshopify.com/cdn/shop/products/p_014_13d87abc-1537-4b63-bcad-d057b6ca71b5_large.png?v=1564986062" alt="">
+  `;
+
+  const PRE = document.querySelector('.preview');
+  PRE.appendChild(Preview);
+
+  document.querySelector('.overlay').style.display = 'block';
+
+  document.body.style.overflow = "hidden";
+
+  Preview.querySelector('.close-btn').addEventListener('click', () => {
+    Preview.remove();
+    document.querySelector('.overlay').style.display = 'none';
+    document.body.style.overflow = "auto"; 
+  });
+
+  document.querySelector('.overlay').addEventListener('click', () => {
+    Preview.remove();
+    document.querySelector('.overlay').style.display = 'none';
+    document.body.style.overflow = "auto"; 
+  });
+
+});
+
+const Size =  document.querySelectorAll('.Size div');
+const Avalible = document.querySelector('.Avalibility p')
+Size.forEach(item => {
+    const Size = document.querySelectorAll('.Size div');
+
+Size.forEach(item =>{
+  item.addEventListener('click' ,()=>{
+      if(item.innerText == 'L'){
+        Avalible.innerText = 'Availability: 9 left in stock'
+      }else if(item.innerText == 'XL'){
+        Avalible.innerText = 'Availability: 7 left in stock'
+      }else{
+        Avalible.innerText = 'Availability: 8 left in stock'
+      }
+  })
+})
+
+Size.forEach(item => {
+  item.addEventListener('click', (e) => {
+
+    Size.forEach(i => {
+      i.style.border = '1px solid #ccc';
+      i.style.color = '#333';
+    });
+
+    item.style.border = '2px solid #F1A5AA';
+    item.style.color = '#F1A5AA';
+  });
+});
+
+const  color = document.querySelectorAll('.colordiv');
+
+
+color.forEach(item => {
+  item.addEventListener('click', ()=>{
+
+    color.forEach(i =>
+     i.style.border = '1px solid #ccc',
+    )
+    item.style.border = '2px solid #f5525d';
+  });
+
+});
+});
+const Counts = document.querySelector('.inc-dec');
+const Num = document.querySelector('.num');
+let currnum = Number(Num.innerText);
+
+Counts.addEventListener('click', (e) => {
+
+  if (e.target.classList.contains('inc')) { 
+    if(Num.innerText >0){
+    currnum--;       // prevent negative
+    Num.innerText = currnum;
+    }
+  }
+
+  if (e.target.classList.contains('dec')) {  // increment
+    currnum++;
+    Num.innerText = currnum;
+  }
+
+});
+
 </script>
 
 
