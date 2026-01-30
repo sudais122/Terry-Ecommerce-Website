@@ -93,8 +93,8 @@ nav {
   justify-content: center;
   align-items: center;
   width: fit-content;
-  height: 2rem;
-  gap: 12px;
+  height: 3rem;
+  gap: 2rem;
 }
 .more-icon{
     display: none;
@@ -323,16 +323,32 @@ nav {
     text-decoration: none;
     color: black;
 }
-.Setting-Menu{
+.Setting-Menu {
+    /* --- Your Original Styles --- */
     width: 150px;
     position: absolute;
     z-index: 999;
-    margin-left: 69rem;
+    margin-left: 69rem; /* Positioning kept exactly as requested */
     height: auto;
     background-color: white;
     padding: 15px;
+
+    /* --- New Animation Styles --- */
+    opacity: 0;
+    visibility: hidden;       /* Hides it so it can't be clicked */
+    transform: translateY(-10px); /* Starts slightly higher */
+    transition: all 0.3s ease-in-out;
 }
-.Setting-Menu ul{
+
+/* Add this class to make it appear */
+.Setting-Menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Slides down to original spot */
+}
+
+/* --- Rest of your CSS (Unchanged) --- */
+.Setting-Menu ul {
     display: flex;
     text-decoration: none;
     flex-direction: column;
@@ -344,7 +360,7 @@ nav {
     text-decoration: none;
     color: black;
 }
-.Setting-Menu ul a li:hover{
+.Setting-Menu ul a li:hover {
     color: #F0A5A9;
     transition: 0.2s ease-in-out;
 }

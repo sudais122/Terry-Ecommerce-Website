@@ -323,16 +323,32 @@ nav {
     text-decoration: none;
     color: black;
 }
-.Setting-Menu{
+.Setting-Menu {
+    /* --- Your Original Styles --- */
     width: 150px;
     position: absolute;
     z-index: 999;
-    margin-left: 69rem;
+    margin-left: 69rem; /* Positioning kept exactly as requested */
     height: auto;
     background-color: white;
     padding: 15px;
+
+    /* --- New Animation Styles --- */
+    opacity: 0;
+    visibility: hidden;       /* Hides it so it can't be clicked */
+    transform: translateY(-10px); /* Starts slightly higher */
+    transition: all 0.3s ease-in-out;
 }
-.Setting-Menu ul{
+
+/* Add this class to make it appear */
+.Setting-Menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0); /* Slides down to original spot */
+}
+
+/* --- Rest of your CSS (Unchanged) --- */
+.Setting-Menu ul {
     display: flex;
     text-decoration: none;
     flex-direction: column;
@@ -344,7 +360,7 @@ nav {
     text-decoration: none;
     color: black;
 }
-.Setting-Menu ul a li:hover{
+.Setting-Menu ul a li:hover {
     color: #F0A5A9;
     transition: 0.2s ease-in-out;
 }
@@ -876,12 +892,13 @@ form > a:hover{
 }
 
 .Allcontent{
-    display: block;
+    width: 100%;
+    height: auto;
+    display: none;
 }
 .cart-Main{
     flex-direction: column;
-    padding: 6rem 0rem 0rem 0rem;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -889,12 +906,14 @@ form > a:hover{
 }
 .cart{
     display: flex;
-    width: 80%;
+    justify-content: center;
+    width: 83%;
     height: 5vh;
 }
 .main-item{
     display: flex;
-    width: 80%;
+    width: 91%;
+    justify-content: center;
     height: 25vh;
 }
 .Cart-item{
@@ -1003,6 +1022,7 @@ form > a:hover{
 .dcrse,.count,.Incse{
     color: #777777;
     width: 33%;
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1019,10 +1039,11 @@ form > a:hover{
 }
 .option-main{
     width: 100%;
-    display: none;
+    display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 1rem;
-    padding: 4rem 9rem;
+    padding: 2rem 9rem 0rem 9rem;
 }
 .option-main button{
     cursor: pointer;
@@ -1043,8 +1064,8 @@ form > a:hover{
     padding: 0;
 }
 .other-options {
-    display: none;
-    padding: 0rem 0rem 0rem 9rem;
+    display: flex;
+    padding: 1rem 0rem 0rem 4.5rem;
     gap: 10px;
     width: 100%;
     height: auto;
@@ -1107,7 +1128,6 @@ form > a:hover{
     display: flex;
     padding: 1rem;
 }
-
 .main-table p {
     margin: 0;
     text-align: center;

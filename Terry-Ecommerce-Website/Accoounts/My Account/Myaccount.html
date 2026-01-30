@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terry Demo</title>
-    <link rel="stylesheet" href="myaccount.css" />
+    <link rel="stylesheet" href="../Global.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -17,7 +17,7 @@
     <nav>
       <div class="nav">
         <div class="Icon">
-          <a href="/Terry-Ecommerce-Website/HomePage/index.htm"><img
+          <a href="/Terry-Ecommerce-Website/index.html"><img
             src="https://furnify-demo.myshopify.com/cdn/shop/files/lgo-new_300x300.png?v=1613685292"
             alt=""
           /></a>
@@ -223,83 +223,36 @@
     <!--Setting-->
     <div class="Setting-Menu">
         <ul>
-            <a href="/Terry-Ecommerce-Website/Accoounts/Myaccount.html"><li>My Account</li></a>
-            <a href="/Terry-Ecommerce-Website/Accoounts/whishlist.html"><li>My Whishlist</li></a>
-            <a href="/Terry-Ecommerce-Website/Accoounts/login.html"><li>Login</li></a>
+            <a href="/Terry-Ecommerce-Website/Accoounts/My Account/Myaccount.html"><li>My Account</li></a>
+            <a href="/Terry-Ecommerce-Website/Accoounts/Whishlist/whishlist.html"><li>My Whishlist</li></a>
+            <a href="/Terry-Ecommerce-Website/Accoounts/Login Form/login.html"><li>Login</li></a>
         </ul>
     </div>
     <!--Mian Secton-->
     <main>
         <div class="Account-text">
-            <div class="Account-main"><h1>YOUR SHOPPING CART</h1></div>
-            <div class="Account"><a href="/Terry-Ecommerce-Website/index.html" style="text-decoration: none;">Home</a><span>/</span><p>Your Shopping Cart</p></div>
+            <div class="Account-main"><h1>ACCOUNT</h1></div>
+            <div class="Account"><a href="/Terry-Ecommerce-Website/index.html" style="text-decoration: none;">Home</a><span>/</span><p>Account</p></div>
         </div>
     </main>
-    <div class="Form" id="Shoppingcart">
-          <div class="empty-cart" >
-            <h3>Shopping Cart</h3>
-            <h4>Your cart is currently empty.</h4>
-            <p>Continue browsing</p>
-            <a href="/Terry-Ecommerce-Website/index.html"><button>HERE</button></a>
-          </div>
+    <div class="Form">
+            <form action="Sbumit">
+                <header>
+                    <h3>Login</h3>
+                    <p>Please login using account detail bellow</p>
+                </header>
+                <div class="inputs">
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                </div>
+                <div class="Submit">
+                    <button>SUBMIT</button>
+                    <a href="/Terry-Ecommerce-Website/Accoounts/Forget Password/Forgetpassword.html">Forgot your password?</a>
+                </div>
+                <a href="/Terry-Ecommerce-Website/Accoounts/New Account/Creat Acc.html">Creat Account</a>
+            </form>
     </div>
-    <!--When user add the product to cart it shown her-->
-    <div class="Allcontent">
-    <div class="cart-Main">
-        <div class="cart">
-          <div class="Cart-item" id="image"><p>IMAGE</p></div>
-          <div class="Cart-item" id="product-name"><P>RODUCT</P></div>
-          <div class="Cart-item" id="price"><P>PRICE</P></div>
-          <div class="Cart-item" id="quantity"><P>Quantity</P></div>
-          <div class="Cart-item" id="total"><P>TOTAL</P></div>
-          <div class="Cart-item" id="remove">REMOVE</div>
-        </div>
-        <div class="main-item">
-          <div class="cart-item" id="Image"><a href=""><img src="https://furnify-demo.myshopify.com/cdn/shop/products/p_008_99318c39-07c1-43da-8c55-203ab846d5fe_compact.png?v=1564985966" alt=""></a></div>
-          <div class="cart-item" id="Product-name"><a href=""><p>Wooden Almirah</p></a></div>
-          <div class="cart-item" id="Price"><P>$70.13</P></div>
-          <div class="cart-item" id="Quantity">
-            <div class="Quan-count">
-              <div class="dcrse">-</div>
-              <div class="count">0</div>
-              <div class="Incse">+</div>
-            </div>
-          </div>
-          <div class="cart-item" id="Total"><P>$70.13</P></div>
-          <div class="cart-item" id="Remove"><i class="fa fa-remove"></i></div>
-        </div>
-      </div>
-      <!--other cart option-->
-      <div class="option-main">
-        <button><p>CONTINUE SHOPPING</p></button>
-        <button><p>CLEAR CART</p></button>
-      </div>
-      <!--other options-->
-      <div class="other-options">
-        <div class="Shipping">
-          <p>Get shipping estimates</p>
-          <input type="text" id="country" placeholder="---">
-          <input type="text" id="Zip" placeholder="Zip/Postal Code">
-          <a href=""><button><p>CONTINUE SHOPPING</p></button></a>
-        </div>
-        <div class="totals">
-          <p>Cart Totals</p>
-        <div class="main-table">
-          <div class="row">
-              <div class="cell"><p>Subotal</p></div>
-              <div class="cell"><p>Total</p></div>
-          </div>
-          <div class="row">
-            <div class="cell"><p>$54.70</p></div>
-            <div class="cell"><p>$54.70</p></div>
-          </div>
-      </div>
-
-          <a href="Custamerdetail.html"><button>Proceed to Checkout</button></a>
-        </div>
-      </div>
-      </div>
-    <!--Footer-->
+        <!--Footer-->
     <footer class="footer">
     <div class="footer-container">
 
@@ -345,9 +298,22 @@
                 <button>Subscribe !</button>
             </div>
         </div>
-
     </div>
     </footer>
+        <script>
+
+const Setting = document.querySelector('.Setting');
+const SettingMenu = document.querySelector('.Setting-Menu');
+
+Setting.addEventListener('click', (e) => {
+    e.stopPropagation();
+    SettingMenu.classList.toggle('active');
+});
+document.addEventListener('click', (e) => {
+    if (!SettingMenu.contains(e.target) && !Setting.contains(e.target)) {
+        SettingMenu.classList.remove('active');
+    }
+});
+    </script>
   </body>
 </html>
-<script src="../script.js"></script>

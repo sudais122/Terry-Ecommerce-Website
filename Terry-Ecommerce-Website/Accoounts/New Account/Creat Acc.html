@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terry Demo</title>
-    <link rel="stylesheet" href="myaccount.css" />
+    <link rel="stylesheet" href="../Global.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -17,7 +17,7 @@
     <nav>
       <div class="nav">
         <div class="Icon">
-          <a href="/Terry-Ecommerce-Website/HomePage/index.htm"><img
+          <a href="/Terry-Ecommerce-Website/index.html"><img
             src="https://furnify-demo.myshopify.com/cdn/shop/files/lgo-new_300x300.png?v=1613685292"
             alt=""
           /></a>
@@ -231,28 +231,29 @@
     <!--Mian Secton-->
     <main>
         <div class="Account-text">
-            <div class="Account-main"><h1>ACCOUNT</h1></div>
-            <div class="Account"><a href="/Terry-Ecommerce-Website/index.html" style="text-decoration: none;">Home</a><span>/</span><p>Account</p></div>
+            <div class="Account-main"><h1>CREAT ACCOUNT</h1></div>
+            <div class="Account"><a href="/Terry-Ecommerce-Website/index.html" style="text-decoration: none;">Home</a><span>/</span><p>Creat Account</p></div>
         </div>
     </main>
     <div class="Form">
             <form action="Sbumit">
                 <header>
-                    <h3>Login</h3>
-                    <p>Please login using account detail bellow</p>
+                    <h3>Create Account</h3>
+                    <p>Please Register using account detail bellow.</p>
                 </header>
                 <div class="inputs">
-                    <input type="email" placeholder="Email" required />
+                    <input type="text" placeholder="First Name" required />
+                    <input type="text" placeholder="Last Name" required />
+                    <input type="Email" placeholder="Email" required />
                     <input type="password" placeholder="Password" required />
                 </div>
                 <div class="Submit">
-                    <button>SUBMIT</button>
-                    <a href="/Terry-Ecommerce-Website/Accoounts/Forgetpassword.html">Forgot your password?</a>
+                    <button>CREAT</button>
                 </div>
-                <a href="/Terry-Ecommerce-Website/Accoounts/Creat Acc.html">Creat Account</a>
+                <a href="/Terry-Ecommerce-Website/index.html">Return to Store</a>
             </form>
     </div>
-        <!--Footer-->
+    <!--Footer-->
     <footer class="footer">
     <div class="footer-container">
 
@@ -298,9 +299,23 @@
                 <button>Subscribe !</button>
             </div>
         </div>
+
     </div>
     </footer>
-    <script src="../script.js"></script>
+        <script>
+
+const Setting = document.querySelector('.Setting');
+const SettingMenu = document.querySelector('.Setting-Menu');
+
+Setting.addEventListener('click', (e) => {
+    e.stopPropagation();
+    SettingMenu.classList.toggle('active');
+});
+document.addEventListener('click', (e) => {
+    if (!SettingMenu.contains(e.target) && !Setting.contains(e.target)) {
+        SettingMenu.classList.remove('active');
+    }
+});
+    </script>
   </body>
 </html>
-<script src="myaccounts.js"></script>

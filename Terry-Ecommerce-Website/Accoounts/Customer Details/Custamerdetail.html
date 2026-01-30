@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Detail</title>
-    <link rel="stylesheet" href="myaccount.css">
+    <link rel="stylesheet" href="../Global.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -16,13 +16,13 @@
 <body>
       <div class="Nav-user">
         <div class="icon-user">
-          <a href="/Terry-Ecommerce-Website/HomePage/index.htm"><img
+          <a href="/Terry-Ecommerce-Website/index.html"><img
             src="https://furnify-demo.myshopify.com/cdn/shop/files/lgo-new_300x300.png?v=1613685292"
             alt=""
           /></a>
         </div>
         <div class="More-iconuser">
-          <a href="/Terry-Ecommerce-Website/Accoounts/ShoppingCart.html"><div class="Cart-user">
+          <a href="/Terry-Ecommerce-Website/Accoounts/Shopping Cart/ShoppingCart.html"><div class="Cart-user">
             <div class="icon">
               <svg
                 width="25px"
@@ -202,26 +202,19 @@
         </div>
     </div>
     <script>
-       const dropdown = document.querySelector('.main-tab');
-const productResp = document.querySelectorAll('.Product-item-resp');
-const svg1 = document.querySelector('.svg1');
-const svg2 = document.querySelector('.svg2');
 
-dropdown.addEventListener('click', (e) => {
-    if(e.target.classList.contains('svg1')){
-        svg1.style.display = 'none';
-        svg2.style.display = 'block';
+const Setting = document.querySelector('.Setting');
+const SettingMenu = document.querySelector('.Setting-Menu');
 
-        productResp.forEach(item => item.classList.add('show'));
-    } else {
-        svg2.style.display = 'none';
-        svg1.style.display = 'block';
-
-        productResp.forEach(item => item.classList.remove('show'));
+Setting.addEventListener('click', (e) => {
+    e.stopPropagation();
+    SettingMenu.classList.toggle('active');
+});
+document.addEventListener('click', (e) => {
+    if (!SettingMenu.contains(e.target) && !Setting.contains(e.target)) {
+        SettingMenu.classList.remove('active');
     }
 });
-
     </script>
-    <script src="../script.js"></script>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terry Demo</title>
-    <link rel="stylesheet" href="myaccount.css" />
+    <link rel="stylesheet" href="../Global.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -17,7 +17,7 @@
     <nav>
       <div class="nav">
         <div class="Icon">
-          <a href="/Terry-Ecommerce-Website/HomePage/index.htm"><img
+          <a href="/Terry-Ecommerce-Website/index.html"><img
             src="https://furnify-demo.myshopify.com/cdn/shop/files/lgo-new_300x300.png?v=1613685292"
             alt=""
           /></a>
@@ -207,25 +207,12 @@
             <a href=""><li>Blog Details</li></a>
         </ul>
     </div>
-    <!--Currency-->
-    <div class="Currecy-con">
-        <ul>
-            <li><span class="Curr">USD</span>-US Dollar</li>
-            <li><span class="Curr">EURO</span>-EURO</li>
-            <li><span class="Curr">GBP</span>-British Pound</li>
-            <li><span class="Curr">INR</span>-Indian Rupee</li>
-            <li><span class="Curr">BDT</span>-Bangladesh Taka</li>
-            <li><span class="Curr">JPY</span>-Japan Yen</li>
-            <li><span class="Curr">CAD</span>-Canda Dollar</li>
-            <li><span class="Curr">ADU</span>-Australian Dollar</li>
-        </ul>
-    </div>
     <!--Setting-->
     <div class="Setting-Menu">
         <ul>
-            <a href="/Terry-Ecommerce-Website/Accoounts/Myaccount.html"><li>My Account</li></a>
-            <a href="/Terry-Ecommerce-Website/Accoounts/whishlist.html"><li>My Whishlist</li></a>
-            <a href="/Terry-Ecommerce-Website/Accoounts/login.html"><li>Login</li></a>
+            <a href="/Terry-Ecommerce-Website/Accoounts/My Account/Myaccount.html"><li>My Account</li></a>
+            <a href="/Terry-Ecommerce-Website/Accoounts/Whishlist/whishlist.html"><li>My Whishlist</li></a>
+            <a href="/Terry-Ecommerce-Website/Accoounts/Login Form/login.html"><li>Login</li></a>
         </ul>
     </div>
     <!--Mian Secton-->
@@ -294,7 +281,20 @@
 
     </div>
     </footer>
-    <script src="Terry-Ecommerce-Website/Accoounts/myaccounts.js"></script>
-    <script src="../script.js"></script>
+    <script>
+
+const Setting = document.querySelector('.Setting');
+const SettingMenu = document.querySelector('.Setting-Menu');
+
+Setting.addEventListener('click', (e) => {
+    e.stopPropagation();
+    SettingMenu.classList.toggle('active');
+});
+document.addEventListener('click', (e) => {
+    if (!SettingMenu.contains(e.target) && !Setting.contains(e.target)) {
+        SettingMenu.classList.remove('active');
+    }
+});
+    </script>
   </body>
 </html>

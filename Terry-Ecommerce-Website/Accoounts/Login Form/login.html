@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Terry Demo</title>
-    <link rel="stylesheet" href="myaccount.css" />
+    <link rel="stylesheet" href="../Global.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -17,7 +17,7 @@
     <nav>
       <div class="nav">
         <div class="Icon">
-          <a href="/Terry-Ecommerce-Website/HomePage/index.htm"><img
+          <a href="/Terry-Ecommerce-Website/index.html"><img
             src="https://furnify-demo.myshopify.com/cdn/shop/files/lgo-new_300x300.png?v=1613685292"
             alt=""
           /></a>
@@ -223,9 +223,9 @@
     <!--Setting-->
     <div class="Setting-Menu">
         <ul>
-            <a href="/Terry-Ecommerce-Website/Accoounts/Myaccount.html"><li>My Account</li></a>
-            <a href="/Terry-Ecommerce-Website/Accoounts/whishlist.html"><li>My Whishlist</li></a>
-            <a href="/Terry-Ecommerce-Website/Accoounts/Myaccount.html"><li>Login</li></a>
+            <a href="/Terry-Ecommerce-Website/Accoounts/My Account/Myaccount.html"><li>My Account</li></a>
+            <a href="/Terry-Ecommerce-Website/Accoounts/Whishlist/whishlist.html"><li>My Whishlist</li></a>
+            <a href="/Terry-Ecommerce-Website/Accoounts/Login Form/login.html"><li>Login</li></a>
         </ul>
     </div>
     <!--Mian Secton-->
@@ -249,7 +249,7 @@
                     <button>SUBMIT</button>
                     <a href="/Terry-Ecommerce-Website/Accoounts/Forgetpassword.html">Forgot your password?</a>
                 </div>
-                <a href="/Terry-Ecommerce-Website/Accoounts/Creat Acc.html">Creat Account</a>
+                <a href="/Terry-Ecommerce-Website/Accoounts/New Account/Creat Acc.html">Creat Account</a>
             </form>
     </div>
         <!--Footer-->
@@ -301,7 +301,20 @@
 
     </div>
     </footer>
-    <script src="../script.js"></script>
+        <script>
+
+const Setting = document.querySelector('.Setting');
+const SettingMenu = document.querySelector('.Setting-Menu');
+
+Setting.addEventListener('click', (e) => {
+    e.stopPropagation();
+    SettingMenu.classList.toggle('active');
+});
+document.addEventListener('click', (e) => {
+    if (!SettingMenu.contains(e.target) && !Setting.contains(e.target)) {
+        SettingMenu.classList.remove('active');
+    }
+});
+    </script>
   </body>
 </html>
-<script src="myaccounts.js"></script>
