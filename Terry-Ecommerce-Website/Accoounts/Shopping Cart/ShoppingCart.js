@@ -3,6 +3,17 @@ let increseNum = 0;
 let DecreseNum = 0;
 const Allcontent = document.querySelector('.Allcontent');
 const MainCart = document.querySelector('.cart-Main');
+
+function calculateTotal(){
+    const total = document.querySelectorAll('#Total p');
+    let totalValue = 0;
+    total.forEach(item => {
+        const price = parseFloat(item.innerText.replace('$',''));
+        totalValue += price;
+    });
+    return `$${totalValue}`;
+}
+
 async function ReceiveData() {
     try{
         const Response = await fetch(url,{
@@ -95,15 +106,6 @@ async function ReceiveData() {
             Options.style.display = 'flex';
 
             // calculate total function
-            function calculateTotal(){
-                const total = document.querySelectorAll('#Total p');
-                let totalValue = 0;
-                total.forEach(item => {
-                    const price = parseFloat(item.innerText.replace('$',''));
-                    totalValue += price;
-                });
-                return `$${totalValue}`;
-            }
             calculateTotal();
 
             const overallTotal = document.createElement('div');
@@ -146,3 +148,33 @@ async function ReceiveData() {
     }
 }
 ReceiveData();
+
+MainCart.addEventListener('click', async (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+
+    if(event.target.classList.contains('fa-remove')) {
+        const Item = event.target.closest('.main-item');
+        const id = Item.dataset.id; 
+
+        try {
+            const Response = await fetch(`http://localhost:3000/cart/${id}`, {
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            if (!Response.ok) throw new Error('Network response was not ok');
+
+            const Data = await Response.json();
+            console.log(Data.message);
+            Item.remove();
+
+            const newTotal = calculateTotal();
+            document.querySelector('#Total p').innerText = newTotal;
+
+
+        } catch (error) {
+            console.log('Error:', error);
+        }
+    }
+});
